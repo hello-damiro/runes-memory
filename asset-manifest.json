@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/runes-memory/static/css/main.89a24cda.css",
-    "main.js": "/runes-memory/static/js/main.0d05c723.js",
+    "main.css": "/runes-memory/static/css/main.28114ceb.css",
+    "main.js": "/runes-memory/static/js/main.6f889a25.js",
     "static/media/bg.webp": "/runes-memory/static/media/bg.3a06a1e6f8eb94119b46.webp",
     "static/media/card-design-back.svg": "/runes-memory/static/media/card-design-back.8eccb887069d7b7874ac.svg",
     "static/media/card-design-front.svg": "/runes-memory/static/media/card-design-front.21ad65bebccadce7c891.svg",
     "static/media/Norse-Bold.otf": "/runes-memory/static/media/Norse-Bold.5efe60ef5042faec1224.otf",
+    "static/media/score-placement.svg": "/runes-memory/static/media/score-placement.9ba7bbeaf4431cc66b74.svg",
     "static/media/rune-fertility.svg": "/runes-memory/static/media/rune-fertility.f790223b79d32641630e.svg",
     "static/media/odin-logo-colored.svg": "/runes-memory/static/media/odin-logo-colored.825f099aa8d2bc7b394a.svg",
     "static/media/odin-logo-line.svg": "/runes-memory/static/media/odin-logo-line.3db1887d5c157d636f89.svg",
@@ -23,7 +24,7 @@
     "static/media/rune-retreat.svg": "/runes-memory/static/media/rune-retreat.48c6493d0dad95590b8c.svg",
     "static/media/rune-joy.svg": "/runes-memory/static/media/rune-joy.b71c120177bb1a2cb455.svg",
     "static/media/rune-defense.svg": "/runes-memory/static/media/rune-defense.48e50afcd6b7b80d066f.svg",
-    "static/media/rune-breakthrough.svg": "/runes-memory/static/media/rune-breakthrough.429878f8e3abd4384235.svg",
+    "static/media/rune-breakthrough.svg": "/runes-memory/static/media/rune-breakthrough.ee6cb4a15d6be7210e3c.svg",
     "static/media/rune-journey.svg": "/runes-memory/static/media/rune-journey.49aceb2c849c994da0f2.svg",
     "static/media/rune-signals.svg": "/runes-memory/static/media/rune-signals.1f8a83fd6011704737fb.svg",
     "static/media/rune-possessions.svg": "/runes-memory/static/media/rune-possessions.fe5d22207ed619a329b3.svg",
@@ -33,11 +34,11 @@
     "index.html": "/runes-memory/index.html",
     "static/media/rune-flow.svg": "/runes-memory/static/media/rune-flow.fcadb0600899f7553c92.svg",
     "static/media/rune-standstill.svg": "/runes-memory/static/media/rune-standstill.ca3f1e85a95db70bc4f4.svg",
-    "main.89a24cda.css.map": "/runes-memory/static/css/main.89a24cda.css.map",
-    "main.0d05c723.js.map": "/runes-memory/static/js/main.0d05c723.js.map"
+    "main.28114ceb.css.map": "/runes-memory/static/css/main.28114ceb.css.map",
+    "main.6f889a25.js.map": "/runes-memory/static/js/main.6f889a25.js.map"
   },
   "entrypoints": [
-    "static/css/main.89a24cda.css",
-    "static/js/main.0d05c723.js"
+    "static/css/main.28114ceb.css",
+    "static/js/main.6f889a25.js"
   ]
 }
