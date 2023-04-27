@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/runes-memory/static/css/main.fc76b258.css",
-    "main.js": "/runes-memory/static/js/main.8d47d1d6.js",
+    "main.css": "/runes-memory/static/css/main.e7513a64.css",
+    "main.js": "/runes-memory/static/js/main.2b048ae7.js",
+    "static/media/bg.webp": "/runes-memory/static/media/bg.3a06a1e6f8eb94119b46.webp",
+    "static/media/Norse-Bold.otf": "/runes-memory/static/media/Norse-Bold.5efe60ef5042faec1224.otf",
+    "static/media/odin-logo-colored.svg": "/runes-memory/static/media/odin-logo-colored.825f099aa8d2bc7b394a.svg",
+    "static/media/odin-logo-line.svg": "/runes-memory/static/media/odin-logo-line.3db1887d5c157d636f89.svg",
     "index.html": "/runes-memory/index.html",
-    "main.fc76b258.css.map": "/runes-memory/static/css/main.fc76b258.css.map",
-    "main.8d47d1d6.js.map": "/runes-memory/static/js/main.8d47d1d6.js.map"
+    "main.e7513a64.css.map": "/runes-memory/static/css/main.e7513a64.css.map",
+    "main.2b048ae7.js.map": "/runes-memory/static/js/main.2b048ae7.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc76b258.css",
-    "static/js/main.8d47d1d6.js"
+    "static/css/main.e7513a64.css",
+    "static/js/main.2b048ae7.js"
   ]
 }
