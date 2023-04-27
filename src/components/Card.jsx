@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Card() {
+function Card({ rune }) {
     return (
-        <div className="card">
-            <img src="../assets/images/runes/rune-defense.svg" alt="rune"></img>
-            <h3>Defense</h3>
+        <div className="card front">
+            <div className={`rune ${rune}`}></div>
+            <h3>{rune}</h3>
         </div>
     );
 }
