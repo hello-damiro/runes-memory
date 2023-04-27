@@ -1,0 +1,29 @@
+.cards {
+    margin: 0 auto;
+    display: grid;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    /* Play with these two values */
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(99px, 1fr));
+    /* width: 80%; */
+    /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
+}
+
+.card {
+    background: url('../assets/images/card-design-back.svg');
+    background-color: var(--blue);
+    background-size: cover;
+    max-width: 180px;
+    height: 100%;
+    aspect-ratio: 2/3;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card .show {
+    background: url('../assets/images/card-design-back.svg');
+    background-color: var(--blue);
+    background-size: cover;
+}
