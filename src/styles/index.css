@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;700&display=swap');
+@import url('reset.css');
+
+:root {
+    /* SYSTEM FONTS */
+    --system-ui: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol';
+
+    /* COLORS */
+    --white: #e6e6e6;
+    --gray: #d5d5d5;
+    --gray-50: #d5d5d566;
+    --yellow-lt: #eed9c3;
+    --yellow: #e3b261;
+    --green: #a78347;
+    --green-dk: #353535;
+    --blue: #111827;
+
+    /* SIZING */
+    --paper-w: 1080px;
+    --paper-h: 1528px;
+    --paper-margin: 100px;
+}
+
+body {
+    background: var(--blue);
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    width: 100%;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+    background: red;
+}
