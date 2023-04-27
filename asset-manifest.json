@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/runes-memory/static/css/main.fc76b258.css",
+    "main.js": "/runes-memory/static/js/main.8d47d1d6.js",
+    "index.html": "/runes-memory/index.html",
+    "main.fc76b258.css.map": "/runes-memory/static/css/main.fc76b258.css.map",
+    "main.8d47d1d6.js.map": "/runes-memory/static/js/main.8d47d1d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc76b258.css",
+    "static/js/main.8d47d1d6.js"
+  ]
+}
