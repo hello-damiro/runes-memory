@@ -1,9 +1,28 @@
 .score-board {
-    width: 100%;
+    background: url('../assets/images/score-placement.svg') no-repeat center center;
+    width: 110px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 34px;
+    left: 74%;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    line-height: 1rem;
+    color: var(--green);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.score-board .score {
+    width: 30px;
     text-align: right;
-    line-height: 1rem;
-    color: var(--blue);
+    padding-bottom: 32px;
+}
+
+.score-board .high-score {
+    width: 30px;
+    text-align: left;
+    padding-top: 32px;
 }

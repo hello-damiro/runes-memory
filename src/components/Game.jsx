@@ -5,12 +5,8 @@ function Game() {
     return (
         <main>
             <div className="score-board">
-                <p className="score">SCORE: 2</p>
-                <p>
-                    Symbolizes strength, vitality, and courage, signifying inner power and
-                    determination.
-                </p>
-                <p className="high-score">HIGH SCORE: 100</p>
+                <p className="score">72</p>
+                <p className="high-score">19</p>
             </div>
             <div className="game">
                 <div className="cards">
@@ -20,7 +16,7 @@ function Game() {
                     <Card rune={'disruption'} />
                     <Card rune={'fertility'} />
                     <Card rune={'flow'} />
-                    <Card rune={'gateway'} />
+                    {/* <Card rune={'gateway'} />
                     <Card rune={'growth'} />
                     <Card rune={'harvest'} />
                     <Card rune={'initiation'} />
@@ -37,10 +33,13 @@ function Game() {
                     <Card rune={'strength'} />
                     <Card rune={'the-self'} />
                     <Card rune={'warrior'} />
-                    <Card rune={'wholeness'} />
+                    <Card rune={'wholeness'} /> */}
                 </div>
             </div>
-            <div></div>
+            <p>
+                Symbolizes strength, vitality, and courage, signifying inner power and
+                determination.
+            </p>
         </main>
     );
 }
