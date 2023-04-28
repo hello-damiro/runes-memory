@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/runes-memory/static/css/main.169ee3a0.css",
-    "main.js": "/runes-memory/static/js/main.b918b735.js",
+    "main.css": "/runes-memory/static/css/main.1f70a5c3.css",
+    "main.js": "/runes-memory/static/js/main.6ac2300a.js",
     "static/media/bg.webp": "/runes-memory/static/media/bg.3a06a1e6f8eb94119b46.webp",
     "static/media/card-design-back.svg": "/runes-memory/static/media/card-design-back.8eccb887069d7b7874ac.svg",
     "static/media/card-design-front.svg": "/runes-memory/static/media/card-design-front.21ad65bebccadce7c891.svg",
@@ -34,11 +34,11 @@
     "index.html": "/runes-memory/index.html",
     "static/media/rune-flow.svg": "/runes-memory/static/media/rune-flow.fcadb0600899f7553c92.svg",
     "static/media/rune-standstill.svg": "/runes-memory/static/media/rune-standstill.ca3f1e85a95db70bc4f4.svg",
-    "main.169ee3a0.css.map": "/runes-memory/static/css/main.169ee3a0.css.map",
-    "main.b918b735.js.map": "/runes-memory/static/js/main.b918b735.js.map"
+    "main.1f70a5c3.css.map": "/runes-memory/static/css/main.1f70a5c3.css.map",
+    "main.6ac2300a.js.map": "/runes-memory/static/js/main.6ac2300a.js.map"
   },
   "entrypoints": [
-    "static/css/main.169ee3a0.css",
-    "static/js/main.b918b735.js"
+    "static/css/main.1f70a5c3.css",
+    "static/js/main.6ac2300a.js"
   ]
 }
