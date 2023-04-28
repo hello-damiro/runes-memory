@@ -1,39 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
+import runesData from '../data/RunesData';
 
 function Game() {
+    const runes = runesData;
+    const [score, setScore] = useState(0);
+    const scoreElement = document.querySelector('.score');
+
+    useEffect(() => {
+        if (scoreElement) scoreElement.textContent = score;
+    }, [score, scoreElement]);
+
+    const handleCardClick = () => {
+        setScore((prevScore) => prevScore + 1);
+        if (scoreElement) scoreElement.textContent = score;
+        console.log('clicked');
+    };
+
     return (
         <main>
             <div className="score-board">
-                <p className="score">72</p>
-                <p className="high-score">19</p>
+                <p className="score"></p>
+                <p className="high-score"></p>
             </div>
             <div className="game">
                 <div className="cards">
-                    <Card rune={'breakthrough'} hidden={true} />
-                    <Card rune={'constraint'} />
-                    <Card rune={'defense'} />
-                    <Card rune={'disruption'} hidden={true} />
-                    <Card rune={'fertility'} />
-                    <Card rune={'flow'} />
-                    <Card rune={'gateway'} />
-                    <Card rune={'growth'} hidden={true} />
-                    <Card rune={'harvest'} />
-                    <Card rune={'initiation'} />
-                    <Card rune={'journey'} />
-                    <Card rune={'joy'} />
-                    <Card rune={'movement'} />
-                    <Card rune={'opening'} />
-                    <Card rune={'partnership'} hidden={true} />
-                    <Card rune={'possessions'} />
-                    <Card rune={'protection'} />
-                    <Card rune={'retreat'} />
-                    <Card rune={'signals'} />
-                    <Card rune={'standstill'} />
-                    <Card rune={'strength'} />
-                    <Card rune={'the-self'} hidden={true} />
-                    <Card rune={'warrior'} />
-                    <Card rune={'wholeness'} />
+                    {runes.map((rune, index) => (
+                        <Card key={rune.id} rune={rune.meaning} click={handleCardClick} />
+                    ))}
                 </div>
             </div>
             <p>
