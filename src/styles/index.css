@@ -16,7 +16,7 @@
     /* COLORS */
     --white: #e6e6e6;
     --gray: #d5d5d5;
-    --gray-50: #d5d5d566;
+    --gray-50: #d5d5d544;
     --yellow-lt: #eed9c3;
     --yellow: #e3b261;
     --green: #a78347;
@@ -116,6 +116,7 @@ main {
     padding: 32px;
     text-align: center;
     background: var(--gray-50);
+    color: var(--white);
 }
 
 .game {

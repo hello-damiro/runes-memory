@@ -1,15 +1,13 @@
 .cards {
     margin: 0 auto;
     display: grid;
-    gap: 24px;
+    gap: 32px;
     align-items: center;
     justify-content: center;
     height: 100%;
-    /* Play with these two values */
-    width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(99px, 1fr));
-    /* width: 80%; */
-    /* grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); */
+    /* Play with width values */
+    width: 100%;
 }
 
 .card {
