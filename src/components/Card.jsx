@@ -1,10 +1,11 @@
 import React from 'react';
 
-function Card({ rune }) {
+function Card({ rune, hidden }) {
+    const isHidden = hidden && 'hidden';
     return (
-        <div className="card front">
-            <div className={`rune ${rune}`}></div>
-            <h3>{rune}</h3>
+        <div className={`card ${isHidden ? 'back' : 'front'}`}>
+            <div className={`rune ${rune} ${isHidden}`} />
+            <h3 className={isHidden}>{rune}</h3>
         </div>
     );
 }

@@ -10,30 +10,30 @@ function Game() {
             </div>
             <div className="game">
                 <div className="cards">
-                    <Card rune={'breakthrough'} />
+                    <Card rune={'breakthrough'} hidden={true} />
                     <Card rune={'constraint'} />
                     <Card rune={'defense'} />
-                    <Card rune={'disruption'} />
+                    <Card rune={'disruption'} hidden={true} />
                     <Card rune={'fertility'} />
                     <Card rune={'flow'} />
-                    {/* <Card rune={'gateway'} />
-                    <Card rune={'growth'} />
+                    <Card rune={'gateway'} />
+                    <Card rune={'growth'} hidden={true} />
                     <Card rune={'harvest'} />
                     <Card rune={'initiation'} />
                     <Card rune={'journey'} />
                     <Card rune={'joy'} />
                     <Card rune={'movement'} />
                     <Card rune={'opening'} />
-                    <Card rune={'partnership'} />
+                    <Card rune={'partnership'} hidden={true} />
                     <Card rune={'possessions'} />
                     <Card rune={'protection'} />
                     <Card rune={'retreat'} />
                     <Card rune={'signals'} />
                     <Card rune={'standstill'} />
                     <Card rune={'strength'} />
-                    <Card rune={'the-self'} />
+                    <Card rune={'the-self'} hidden={true} />
                     <Card rune={'warrior'} />
-                    <Card rune={'wholeness'} /> */}
+                    <Card rune={'wholeness'} />
                 </div>
             </div>
             <p>
