@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import runesData from '../data/RunesData';
 
@@ -6,12 +6,13 @@ function Game() {
     const delay = (ms) => new Promise((res) => setTimeout(res, ms));
     const runes = runesData;
 
-    const [numCards] = useState(3);
     const [score, setScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
     const [description, setDescription] = useState('---');
-    const [areCardsHidden, setAreCardsHidden] = useState(false);
     const [comparisonArray, setComparisonArray] = useState([]);
+    const [numCards, setNumCards] = useState(3);
+    const [hideCards, setHideCards] = useState(false);
+    const [levelClicks, setLevelClicks] = useState(0);
 
     const generateRandomRunes = () => {
         const randomIds = new Set();
@@ -22,43 +23,40 @@ function Game() {
         return Array.from(randomIds).map((id) => runes[id]);
     };
 
-    const [cardSubset, setCardSubset] = useState(generateRandomRunes());
+    const cardSubset = generateRandomRunes();
 
-    const compareNumberToArray = (int) => {
-        return comparisonArray.includes(int);
-    };
+    const writeHighScore = (score) => (score >= highScore ? setHighScore(score + 1) : null);
+    const compareNumberToArray = (id) => comparisonArray.includes(id);
 
-    const detectDuplicate = async (id) => {
-        setAreCardsHidden(true);
+    const handleCardClick = async (id) => {
+        setHideCards(true);
+        setDescription(`${runes[id].name} - ${runes[id].description}`);
+        setLevelClicks((prevClicks) => prevClicks + 1);
         if (compareNumberToArray(id)) {
-            // game over
-            console.log('GAMEOVER', comparisonArray);
-            writeHighScore(score);
-            await delay(3000);
-            resetGame();
+            resetGame(); // Game over
         } else {
-            writeHighScore(score);
-            setComparisonArray([...comparisonArray, id]);
-            setScore((prevScore) => prevScore + 1);
-            await delay(800);
-            setCardSubset(generateRandomRunes());
-            setAreCardsHidden(false);
+            setComparisonArray([...comparisonArray, id]); // Continue playing
         }
+        await delay(1000);
+        setScore((prevScore) => prevScore + 1);
+        writeHighScore(score);
+        setHideCards(false);
     };
 
-    const writeHighScore = (score) => {
-        if (score >= highScore) setHighScore(score);
-    };
+    useEffect(() => {
+        if (levelClicks === numCards) {
+            setNumCards((prevCards) => prevCards + 1);
+            setLevelClicks(0);
+            setComparisonArray([]);
+        }
+        console.log('CONTINUE ?', levelClicks, numCards, comparisonArray);
+    }, [levelClicks, numCards, comparisonArray]);
 
     const resetGame = () => {
         setScore(0);
-    };
-
-    const handleCardClick = (id) => {
-        console.log(runes[id].name, runes[id].meaning);
-
-        setDescription(`${runes[id].name} - ${runes[id].description}`);
-        detectDuplicate(id);
+        setNumCards(3);
+        setLevelClicks(0);
+        setComparisonArray([]);
     };
 
     return (
@@ -74,7 +72,7 @@ function Game() {
                             key={rune.id}
                             rune={rune.meaning}
                             futhark={rune.name}
-                            hidden={areCardsHidden}
+                            hidden={hideCards}
                             click={(e) => handleCardClick(rune.id - 1)}
                         />
                     ))}
