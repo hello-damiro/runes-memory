@@ -6,13 +6,13 @@ function Game() {
     const delay = (ms) => new Promise((res) => setTimeout(res, ms));
     const runes = runesData;
 
+    const [numCards, setNumCards] = useState(3);
+    const [hideCards, setHideCards] = useState(false);
+    const [levelClicks, setLevelClicks] = useState(0);
     const [score, setScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
     const [description, setDescription] = useState('---');
     const [comparisonArray, setComparisonArray] = useState([]);
-    const [numCards, setNumCards] = useState(3);
-    const [hideCards, setHideCards] = useState(false);
-    const [levelClicks, setLevelClicks] = useState(0);
 
     const generateRandomRunes = () => {
         const randomIds = new Set();
@@ -35,21 +35,30 @@ function Game() {
         if (compareNumberToArray(id)) {
             resetGame(); // Game over
         } else {
-            setComparisonArray([...comparisonArray, id]); // Continue playing
+            setComparisonArray([...comparisonArray, id]); // Continue
+            await delay(1000);
+            setScore((prevScore) => prevScore + 1);
+            writeHighScore(score);
+            storeLocal(true);
         }
-        await delay(1000);
-        setScore((prevScore) => prevScore + 1);
-        writeHighScore(score);
         setHideCards(false);
     };
 
     useEffect(() => {
+        if (retrieveLocal() !== null) {
+            setHighScore(retrieveLocal());
+        }
+
+        const cardsDiv = document.querySelector('.cards');
+        const width = numCards > 8 ? 100 : (numCards * 100) / 8;
+        cardsDiv.style.width = width + '%';
+
         if (levelClicks === numCards) {
             setNumCards((prevCards) => prevCards + 1);
             setLevelClicks(0);
             setComparisonArray([]);
         }
-        console.log('CONTINUE ?', levelClicks, numCards, comparisonArray);
+        console.log('CONTINUE ?', width, levelClicks, numCards, comparisonArray);
     }, [levelClicks, numCards, comparisonArray]);
 
     const resetGame = () => {
@@ -57,6 +66,15 @@ function Game() {
         setNumCards(3);
         setLevelClicks(0);
         setComparisonArray([]);
+    };
+
+    const retrieveLocal = () => {
+        return localStorage.getItem('runes-memory');
+    };
+
+    const storeLocal = (store) => {
+        if (store) localStorage.setItem('runes-memory', highScore);
+        else localStorage.removeItem('runes-memory');
     };
 
     return (
@@ -67,7 +85,7 @@ function Game() {
             </div>
             <div className="game">
                 <div className="cards">
-                    {cardSubset.map((rune, index) => (
+                    {cardSubset.map((rune) => (
                         <Card
                             key={rune.id}
                             rune={rune.meaning}
