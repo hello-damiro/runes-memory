@@ -4,7 +4,7 @@
     display: grid;
     gap: 32px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     grid-template-columns: repeat(auto-fit, minmax(99px, 1fr));
     /* Play with width values on JS */
     /* width: 100%; */
