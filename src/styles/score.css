@@ -2,9 +2,6 @@
     background: url('../assets/images/score-placement.svg') no-repeat center center;
     width: 110px;
     aspect-ratio: 1/1;
-    position: absolute;
-    top: 34px;
-    left: 72%;
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
@@ -14,6 +11,7 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
+    align-self: center;
 }
 
 .score-board .score {
@@ -26,4 +24,40 @@
     width: 30px;
     text-align: left;
     padding-top: 32px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: -132px;
+    right: 32px;
+}
+
+.play-button {
+    background: var(--white);
+    position: absolute;
+    width: 110px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    border-radius: 50%;
+    /* outline: 0.2px solid var(--white);
+    outline-offset: -12px; */
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding-left: 5px;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.play-button:hover {
+    background: var(--yellow-lt);
 }

@@ -6,7 +6,7 @@ function Game() {
     const delay = (ms) => new Promise((res) => setTimeout(res, ms));
     const runes = runesData;
 
-    const [numCards, setNumCards] = useState(3);
+    const [numCards, setNumCards] = useState(24);
     const [hideCards, setHideCards] = useState(false);
     const [levelClicks, setLevelClicks] = useState(0);
     const [score, setScore] = useState(0);
@@ -15,6 +15,18 @@ function Game() {
     const [comparisonArray, setComparisonArray] = useState([]);
     const [cover, setCover] = useState(false);
     const [curtainClass, setCurtainClass] = useState('curtain');
+    const [levelClass, setLevelClass] = useState('level');
+    const [level, setLevel] = useState(0);
+    const [showLevel, setShowLevel] = useState(false);
+    const [gameOn, setGameOn] = useState(false);
+    const [playClass, setPlayClass] = useState('play-button');
+
+    const startGame = () => {
+        console.log('START GAME');
+        setLevel(0);
+        setNumCards(3);
+        setGameOn(true);
+    };
 
     const generateRandomRunes = () => {
         const randomIds = new Set();
@@ -42,8 +54,15 @@ function Game() {
             await delay(1000);
             setScore((prevScore) => prevScore + 1);
             if (score >= highScore) {
-                console.log('score', score, highScore);
                 setHighScore(score + 1);
+            }
+            console.log(levelClicks, numCards);
+            if (levelClicks + 1 === numCards) {
+                console.log('level', level);
+                setShowLevel((prevState) => !prevState);
+                setDescription('---');
+                await delay(3000);
+                setShowLevel((prevState) => !prevState);
             }
         }
         setCover((prevState) => !prevState);
@@ -53,10 +72,12 @@ function Game() {
 
     const resetGame = () => {
         setScore(0);
-        setNumCards(3);
+        setNumCards(24);
         setLevelClicks(0);
+        setLevel(0);
         setComparisonArray([]);
         setDescription('---');
+        setGameOn(false);
     };
 
     const retrieveLocal = () => {
@@ -66,15 +87,15 @@ function Game() {
     const storeLocal = (store) => {
         if (store) {
             localStorage.setItem('runes-memory', highScore);
-            console.log('saved to local', highScore);
         } else localStorage.removeItem('runes-memory');
     };
 
     useEffect(() => {
-        if (retrieveLocal() !== null) {
-            setHighScore(parseInt(retrieveLocal()));
-            console.log('retrieving HS', retrieveLocal());
-        }
+        // storeLocal(false); // delete local memory
+        if (retrieveLocal() !== null) setHighScore(parseInt(retrieveLocal()));
+        setLevel('up your Runes: Do not select a Rune twice.');
+        // const levelDiv = document.querySelector('.level');
+        // levelDiv.textContent = `Odin's Rule: Do not select a Rune twice.`;
     }, []);
 
     useEffect(() => {
@@ -82,23 +103,35 @@ function Game() {
         const width = numCards > 8 ? 100 : (numCards * 100) / 8;
         cardsDiv.style.width = width + '%';
 
-        if (cover) setCurtainClass('curtain');
-        else setCurtainClass('curtain hidden');
+        if (gameOn) {
+            if (cover) setCurtainClass('curtain');
+            else setCurtainClass('curtain hidden');
 
-        if (levelClicks === numCards) {
-            setNumCards((prevCards) => prevCards + 1);
-            setLevelClicks(0);
-            setComparisonArray([]);
+            if (showLevel) setLevelClass('level');
+            else setLevelClass('level hidden');
+
+            if (gameOn) setPlayClass('play-button hidden');
+            else setPlayClass('play-button');
+
+            if (levelClicks === numCards) {
+                setNumCards((prevCards) => prevCards + 1);
+                setLevel((prevLevel) => prevLevel + 1);
+                setLevelClicks(0);
+                setComparisonArray([]);
+            }
         }
-
-        console.log('CONTINUE ?', levelClicks, numCards, comparisonArray);
-    }, [levelClicks, numCards, comparisonArray, cover, highScore, score]);
+    }, [levelClicks, numCards, comparisonArray, cover, highScore, score, showLevel, gameOn]);
 
     return (
         <main>
-            <div className="score-board">
-                <p className="score">{score}</p>
-                <p className="high-score">{highScore}</p>
+            <div className="options">
+                <div className={playClass} onClick={startGame}>
+                    <h4>Play</h4>
+                </div>
+                <div className="score-board">
+                    <p className="score">{score}</p>
+                    <p className="high-score">{highScore}</p>
+                </div>
             </div>
             <div className="game">
                 <div className="cards">
@@ -114,6 +147,7 @@ function Game() {
                 </div>
             </div>
             <p>{description}</p>
+            <div className={levelClass}>Level {level}</div>
             <div className={curtainClass}></div>
         </main>
     );
