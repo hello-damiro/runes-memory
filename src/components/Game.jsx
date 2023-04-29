@@ -114,7 +114,7 @@ function Game() {
             else setPlayClass('play-button');
 
             if (levelClicks === numCards) {
-                setNumCards((prevCards) => prevCards + 1);
+                if (numCards !== 24) setNumCards((prevCards) => prevCards + 1);
                 setLevel((prevLevel) => prevLevel + 1);
                 setLevelClicks(0);
                 setComparisonArray([]);
