@@ -100,7 +100,7 @@ function Game() {
 
     useEffect(() => {
         const cardsDiv = document.querySelector('.cards');
-        const width = numCards > 8 ? 100 : (numCards * 100) / 8;
+        const width = numCards > 8 ? 100 : (numCards * 100) / (numCards + 2);
         cardsDiv.style.width = width + '%';
 
         if (gameOn) {
