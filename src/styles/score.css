@@ -1,3 +1,16 @@
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: -132px;
+
+    /* margin: 0 auto;
+    margin-left: -32px; */
+}
+
 .score-board {
     background: url('../assets/images/score-placement.svg') no-repeat center center;
     width: 110px;
@@ -24,17 +37,6 @@
     width: 30px;
     text-align: left;
     padding-top: 32px;
-}
-
-.options {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 110px;
-    aspect-ratio: 1/1;
-    position: absolute;
-    top: -132px;
-    right: 32px;
 }
 
 .play-button {
