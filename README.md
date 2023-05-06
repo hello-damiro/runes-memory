@@ -24,6 +24,8 @@ But still Im not losing hope on grasping the concepts behind each `hook`. Hopefu
 
 **Day 3:** The game is actually simple, the design and hooks implementation took more time than coding the algorithm of the game. Im happy with the UI and the product itself. Simple yet entertaining to make. _Completed 29 April 2023_
 
+**Day 4** Added support on mobile responsiveness.
+
 </br>
 
 ## Project Screenshot
