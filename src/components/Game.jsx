@@ -47,8 +47,11 @@ function Game() {
         setDescription(`${runes[id].name} - ${runes[id].description}`);
         setLevelClicks((prevClicks) => prevClicks + 1);
         if (compareNumberToArray(id)) {
-            await delay(1000);
+            setShowLevel((prevState) => !prevState);
+            setLevel('not Cleared: Game Over!');
+            await delay(3000);
             resetGame(); // Game over
+            setShowLevel((prevState) => !prevState);
         } else {
             setComparisonArray([...comparisonArray, id]); // Continue
             await delay(1000);
@@ -71,10 +74,11 @@ function Game() {
     };
 
     const resetGame = () => {
+        setPlayClass('play-button');
         setScore(0);
         setNumCards(24);
         setLevelClicks(0);
-        setLevel(0);
+        setLevel('up your Runes: Do not select a Rune twice.');
         setComparisonArray([]);
         setDescription('---');
         setGameOn(false);
