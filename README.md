@@ -20,7 +20,7 @@ But still Im not losing hope on grasping the concepts behind each `hook`. Hopefu
 
 **Day 1:** Conceptualize the game. See what can I make visually different from my classmates. I wanted to carry the theme of _The Odin_ throughout the projects im makin for this course. And maybe showcase it to my UX portfolio. learned so much about Norse Runes so that I can make somehow some justice to the game. Done on the game assets. Will try to finish the CSS for the UI so that I can focus on the game logic on ReactJS.
 
-**Day 2:** Struggled with `useEffect` and `useState`. Its hard to grab the idea that hooks are asynchronous and that it may not produce results as expected like common JS functions do. Need to focus more on hooks to master react. Im learning JS because I miss dealing with actioScript; which I think is the closest language compare to it.
+**Day 2:** Struggled with `useEffect` and `useState`. Its hard to grab the idea that hooks are asynchronous and that it may not produce results as expected like common JS functions do. Need to focus more on hooks to master react.
 
 **Day 3:** The game is actually simple, the design and hooks implementation took more time than coding the algorithm of the game. Im happy with the UI and the product itself. Simple yet entertaining to make. _Completed 29 April 2023_
 
